@@ -7,9 +7,8 @@ export class AuthService {
     @Inject('USER_SERVICE') private readonly userService: UserService,
   ) {}
 
-  validateUser(username: string, email: string) {
-    console.log('auth service line 11');
-    const user = this.userService.findUserByUsername(username);
-    console.log(user);
+  async validateUser(username: string, password: string) {
+    const user = await this.userService.findUserByUsername(username);
+    return user;
   }
 }

@@ -18,6 +18,7 @@ model Task {
 
 model User {
   id    Int    @id @default(autoincrement())
-  name  String
+  username  String
   email String
+  password String
 }

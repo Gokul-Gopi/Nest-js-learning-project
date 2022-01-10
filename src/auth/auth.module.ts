@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
+import { PrismaService } from 'src/prisma.service';
 import { UserService } from 'src/users/services/user.service';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './services/auth.service';
@@ -18,6 +19,7 @@ import { LocalStrategy } from './utils/LocalStrategy';
       useClass: UserService,
     },
     LocalStrategy,
+    PrismaService,
   ],
 })
 export class AuthModule {}
